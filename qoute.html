@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Quote Generator</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+
+    <script src="https://kit.fontawesome.com/bf4c2bff60.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="qoute.css">
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#">Random Quote Generator</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="qoute.html">Project</a></li>
+                        <li class="nav-item"><a class="nav-link" href="team-section.html">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" id="login" href="index.html">Login</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Pricing section-->
+        <section id="generator">
+            <div class="container">
+                <header>Qoute Of The Day</header>
+                <div class="content">
+                    <div class="qoute-area">
+
+                        <p class="xikmad" class="text-muted">
+                            <i class="fas fa-quote-left"></i> Many of life’s failures are people who did not realize how close they were to success when they gave up <i class="fas fa-quote-right"></i>
+                        </p>
+
+                    </div>
+                    <div class="author">
+                        <div class="row d-flex justify-content-space-between">
+                            <div class="col-6">
+                                <span id='author' class="text-danger">
+                                    
+                                        <img src="thomas.jpg" alt="" id="author-img" class="img-fluid " alt="Author-Img">   -Thomas A-Edison
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                        <!-- <div class="author-img">
+                            <img src="cj.jpg" alt="cj">
+                        </div> -->
+
+
+                    </div>
+                    <div class="border"></div>
+                    <div class="btns">
+                        <div class="features">
+                            <i data-toggle="tooltip" data-placement="bottom" title="Convert Text To Speech" class="fas fa-volume-up" id="sound"></i>
+                            <i class="fab fa-twitter" data-toggle="tooltip" data-placement="right" title="Post Into Twitter" id="twitter"></i>
+                        </div>
+
+                        <button id="qoute-btn">New Qoute</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+    <!-- Footer-->
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy;GROUP E 2022 </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <!-- jquery -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="./qoute.js"></script>
+
+
+    <script>
+        let twitterBtn = document.querySelector("#twitter")
+
+        twitterBtn.addEventListener("click", () => {
+            swal({
+                    title: "Twitter Post",
+                    text: "This Quote Will Be Post Into Twitter, Click Ok To Continue Or Cancel To Denied.",
+                    icon: "info",
+                    buttons: true,
+                    infoMode: true,
+                })
+                .then((willPost) => {
+                    if (willPost) {
+                        let tweetUrl = `https://twitter.com/intent/tweet?url=${xikmad.innerText} --${author.innerText}`;
+                        window.open(tweetUrl, "_blank");
+
+                    } else {
+                        return
+                    }
+                });
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>
