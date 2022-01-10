@@ -3,5 +3,5 @@ This is Random Quote Generator , Group project using | HTML, CSS, BOOTSTRAP, TAI
 
 # Group Members
 <img src="cj.jpg">
-<img src="abdullahi.jpg">
+<img src="abdullahi.jpg" style="border-radius: 30px">
 
